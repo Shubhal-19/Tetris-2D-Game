@@ -76,7 +76,7 @@ namespace TetrisGameDemo
 
         private void PictureBoxGame_Paint(object? sender, PaintEventArgs e)
         {
-            // Draw the board and settled pieces
+            
             for (int r = 0; r < Rows; r++)
             {
                 for (int c = 0; c < Columns; c++)
@@ -89,7 +89,7 @@ namespace TetrisGameDemo
                 }
             }
 
-            // Draw the current piece
+            
             if (currentPiece != null)
             {
                 int[,] shape = currentPiece.Shape;
@@ -134,11 +134,7 @@ namespace TetrisGameDemo
 
         private void DropPiece()
         {
-            // Pseudocode:
-            // 1. While the piece can move down, move it down by one.
-            // 2. When it can't move down, lock it in place.
-            // 3. Check for completed lines and update score.
-            // 4. Spawn a new piece.
+           
 
             if (currentPiece == null) return;
 
@@ -147,7 +143,7 @@ namespace TetrisGameDemo
                 currentPiece.Y += 1;
             }
 
-            // Lock the piece in place
+           
             int[,] shape = currentPiece.Shape;
             for (int i = 0; i < shape.GetLength(0); i++)
             {
@@ -165,7 +161,7 @@ namespace TetrisGameDemo
                 }
             }
 
-            // Check for completed lines
+            
             for (int r = Rows - 1; r >= 0; r--)
             {
                 bool fullLine = true;
@@ -179,7 +175,7 @@ namespace TetrisGameDemo
                 }
                 if (fullLine)
                 {
-                    // Remove the line and move everything above down
+                    
                     for (int row = r; row > 0; row--)
                     {
                         for (int col = 0; col < Columns; col++)
@@ -192,7 +188,7 @@ namespace TetrisGameDemo
                         board[0, col] = 0;
                     }
                     score += 100;
-                    r++; // Recheck the same row after shifting
+                    r++; 
                 }
             }
 
@@ -207,7 +203,7 @@ namespace TetrisGameDemo
             currentPiece.Rotate();
             if (!IsValidPosition(currentPiece, currentPiece.X, currentPiece.Y))
             {
-                currentPiece.Shape = originalShape; // Revert if not valid
+                currentPiece.Shape = originalShape; 
             }
         }
 
@@ -220,7 +216,7 @@ namespace TetrisGameDemo
                 currentPiece.Y += v2;
                 pictureBoxGame.Invalidate();
             }
-            else if (v2 == 1) // If moving down is not valid, lock the piece
+            else if (v2 == 1) 
             {
                 SettledPieces();
                 ClearLines();
@@ -258,7 +254,7 @@ namespace TetrisGameDemo
                     {
                         board[0, col] = 0;
                     }
-                    r++; // Recheck the same row after shifting
+                    r++; 
                 }
             }
             if (linesCleared > 0)
