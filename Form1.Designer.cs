@@ -16,10 +16,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -27,18 +23,14 @@
             timerGame = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxGame).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBoxGame
-            // 
+           
             pictureBoxGame.BackColor = Color.Black;
             pictureBoxGame.Location = new Point(0, 0);
             pictureBoxGame.Name = "pictureBoxGame";
             pictureBoxGame.Size = new Size(803, 464);
             pictureBoxGame.TabIndex = 0;
             pictureBoxGame.TabStop = false;
-            // 
-            // Form1
-            // 
+           
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 461);
